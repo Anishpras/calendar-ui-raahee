@@ -5,15 +5,15 @@
 
 $background-color: #f4dedc;
 
-.main__app{
+.main__app {
   background: $background-color;
-  height: 100vh;
+  width: auto;
+  height: 100vw;
   display: flex;
   flex-wrap: wrap;
 }
 
 .app {
- 
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -21,13 +21,7 @@ $background-color: #f4dedc;
   align-items: center;
   flex-wrap: wrap;
 }
-.logoImage {
-  position: absolute;
-  width: 301.52px;
-  height: 294.95px;
-  left: 5px;
-  top: 0px;
-}
+
 .app_container {
   background: radial-gradient(
     97.57% 291.93% at 0.94% 2.35%,
@@ -47,4 +41,30 @@ $background-color: #f4dedc;
   justify-content: space-around;
   width: 85vw;
   height: 80vh;
+}
+.blob5 {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.blob4 {
+  position: absolute;
+  left: 1rem;
+  top: 33rem;
+}
+.blob6 {
+  position: absolute;
+  left: 3rem;
+  top: 4rem;
+}
+.blob8 {
+  position: absolute;
+  right: 50rem;
+  top: 15rem;
+}
+.blob7 {
+  position: absolute;
+  right: 5rem;
+  top: 44rem;
+  width: 10rem;
 }
