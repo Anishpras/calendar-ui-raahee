@@ -10,7 +10,7 @@ const Profile = () => {
     <div className="profile">
       {clicked ? <Info /> : <ProfileForm />}
 
-      <button onClick={() => setClicked(!clicked)}>
+      <button className="profile-button" onClick={() => setClicked(!clicked)}>
         {clicked ? `Edit Changes` : `Cancel`}
       </button>
     </div>

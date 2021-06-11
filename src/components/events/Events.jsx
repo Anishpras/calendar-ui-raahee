@@ -1,4 +1,5 @@
 import React from "react";
+import EventCard from "../event-card/EventCard";
 import "./_events.scss";
 const Events = () => {
   return (
@@ -7,14 +8,11 @@ const Events = () => {
         <div className="eventHeading">
           <h1>Your Appointments</h1>
         </div>
-        <h2>10-06-2021, 10:00 AM </h2>
-        <h2>10-06-2021, 10:00 AM </h2>
-        <h2>10-06-2021, 10:00 AM </h2>
-        <h2>10-06-2021, 10:00 AM </h2>
-        <h2>10-06-2021, 10:00 AM </h2>
-        <h2>10-06-2021, 10:00 AM </h2>
-        <h2>10-06-2021, 10:00 AM </h2>
-        <h2>10-06-2021, 10:00 AM </h2>
+        <EventCard />
+        <EventCard />
+        <EventCard />
+        <EventCard />
+        <EventCard />
       </div>
     </div>
   );

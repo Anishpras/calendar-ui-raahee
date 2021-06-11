@@ -1,0 +1,57 @@
+.form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-control {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+.formik-form {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  justify-content: center;
+}
+.btn-submit {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 20px;
+  background: #f0b727;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  align-items: center;
+  width: 50%;
+  margin-top: 1rem;
+  align-self: center;
+}
+.btn-submit:hover {
+  background: #f0d462;
+  text-decoration: none;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+// .checkbox-control {
+//   flex-direction: column;
+// }
+input,
+textarea {
+  border: 2px solid #aaa;
+  border-radius: 10px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+input:focus,
+textarea:focus {
+  border-color: #ff877f;
+  box-shadow: 0 0 8px 0 #ff877f;
+}

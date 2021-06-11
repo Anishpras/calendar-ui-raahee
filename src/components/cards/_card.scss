@@ -11,10 +11,9 @@
     inset 2px 2px 5px rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(12px);
   /* Note: backdrop-filter has minimal browser support */
-
   border-radius: 32px;
-  
-  
+  align-items: center;
+  width: 30rem;
 }
 .cardPink {
   display: flex;
@@ -29,25 +28,24 @@
     inset 2px 2px 5px rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(12px);
   /* Note: backdrop-filter has minimal browser support */
-  
+
   border-radius: 32px;
   align-items: center;
- width: 30rem;
-
+  width: 30rem;
 }
 
-@media (max-width:1115px){
-  .main__app{
+@media (max-width: 1115px) {
+  .main__app {
     height: 114vh;
   }
-  .app{
+  .app {
     height: auto;
   }
-  .app_container{
+  .app_container {
     height: auto;
   }
-  .cardPink{
+  .cardPink {
     margin-top: 10px;
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 }

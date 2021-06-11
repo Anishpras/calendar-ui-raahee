@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
+  font-family: poppins, sans-serif;
 }
 
 $background-color: #f4dedc;
@@ -49,8 +51,9 @@ $background-color: #f4dedc;
 }
 .blob4 {
   position: absolute;
-  left: 1rem;
-  top: 33rem;
+  left: 2rem;
+  top: 48rem;
+  width: 15rem;
 }
 .blob6 {
   position: absolute;
@@ -65,6 +68,6 @@ $background-color: #f4dedc;
 .blob7 {
   position: absolute;
   right: 5rem;
-  top: 44rem;
+  top: 53rem;
   width: 10rem;
 }
