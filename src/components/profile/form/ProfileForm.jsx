@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import "./_profileForm.scss";
 import db from "../../../firebase.utils";
 import { useAuth } from "../../../contexts/AuthContext";
+
 const ProfileForm = () => {
   const { currentUser } = useAuth();
 
