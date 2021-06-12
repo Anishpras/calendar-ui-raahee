@@ -52,7 +52,7 @@ function Register() {
         {" "}
         <div className="register-header">
           <h1>Register</h1>
-          {error && <p variant="danger">{error}</p>}
+          {error && <p>{error}</p>}
         </div>{" "}
         <form className="register-form">
           <div className="registerForm-control">

@@ -1,0 +1,100 @@
+.login {
+  background: radial-gradient(
+    97.57% 291.93% at 0.94% 2.35%,
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  box-shadow: inset -2px -2px 5px rgba(255, 250, 250, 0.5),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 90%;
+}
+.login-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  p {
+    color: #cd5244;
+  }
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  button {
+    margin-top: 2rem;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    border: #cd5244 ridge;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 20px;
+    background: #ff877f;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    width: 50%;
+
+    align-self: center;
+  }
+  button:hover {
+    background: #f06a4c;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+.login-container {
+  padding: 40px;
+
+  .button-register {
+    margin-top: 2rem;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    border: #c8a92f ridge;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 20px;
+    background: #f0d462;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    width: 30%;
+
+    align-self: center;
+  }
+  .button-register:hover {
+    background: #f0d23a;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+.loginForm-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  width: 70%;
+  align-self: center;
+  input {
+    border: 2px solid #aaa;
+    border-radius: 10px;
+
+    outline: none;
+
+    height: 50px;
+    transition: 0.3s;
+  }
+  input:focus {
+    border-color: #ff877f;
+    box-shadow: 0 0 8px 0 #ff877f;
+  }
+}

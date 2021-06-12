@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Alert } from "react-bootstrap";
-import "./Login.css";
+import "./_login.scss";
 import { Link, useHistory } from "react-router-dom";
 
 import { useAuth } from "../../contexts/AuthContext";
@@ -31,61 +30,41 @@ function Login() {
 
   return (
     <div className="login">
-      <Container fluid>
-        <Row>
-          <Col xs={12} md={6} className="login__left">
-            <center>
-              <img src="" alt="fashion" className="login__images"></img>
-            </center>
-          </Col>
-          <Col xs={12} md={6}>
-            <div className="login__container">
-              <h3>Log In To FAMista!</h3>
-              {error && <Alert variant="danger">{error}</Alert>}
-              <form>
-                <center>
-                  <input
-                    onChange={(e) => setEmail(e.target.value)}
-                    type="email"
-                    placeholder="Email"
-                  />
-                </center>
-                <center>
-                  <input
-                    onChange={(e) => setPassword(e.target.value)}
-                    type="password"
-                    placeholder="Password"
-                  />
-                </center>
-                <center>
-                  <button
-                    disabled={loading}
-                    type="submit"
-                    onClick={handleSubmit}
-                    className="login__login mb-3">
-                    Log In
-                  </button>
-                </center>
-                <center>
-                  <Link to="/forgot-password">
-                    <h6>Forgot Password</h6>
-                  </Link>
-                </center>
-                <center>
-                  <hr />
-                </center>
-                <center>
-                  <Link to="/register">
-                    <button className="login__createNewAccount">
-                      Create New Account
-                    </button>
-                  </Link>
-                </center>
-              </form>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+      <div className="login-container">
+        <div className="login-header">
+          <h3>Log In</h3>
+          {error && <p>{error}</p>}
+        </div>
+        <form className="login-form">
+          {" "}
+          <div className="loginForm-control">
+            {" "}
+            <label htmlFor="email">Email</label>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="Email"
+            />
+          </div>
+          <div className="loginForm-control">
+            {" "}
+            <label htmlFor="password">Password</label>
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="Password"
+            />
+          </div>
+          <button disabled={loading} type="submit" onClick={handleSubmit}>
+            Log In
+          </button>
+        </form>
+        <center>
+          <Link to="/register">
+            <button className="button-register">Create New Account</button>
+          </Link>
+        </center>
+      </div>
     </div>
   );
 }
