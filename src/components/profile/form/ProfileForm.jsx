@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./_profileForm.scss";
+import db from "../../../firebase.utils";
+import { useAuth } from "../../../contexts/AuthContext";
 const ProfileForm = () => {
-  const [profileData, setProfileData] = useState({});
-  useEffect(() => {
-    console.log(profileData);
-  }, [profileData]);
+  const { currentUser } = useAuth();
 
   const initialValues = {
     name: "",
@@ -18,8 +17,14 @@ const ProfileForm = () => {
   };
 
   const onSubmit = (values) => {
-    setProfileData(values);
-    console.log(values);
+    db.collection("mhp").doc(currentUser.uid).set({
+      name: values.name,
+      photoURL: values.photoURL,
+      bio: values.bio,
+      sessionDuration: values.sessionDuration,
+      fees: values.fees,
+      weekDaysChecked: values.weekDaysChecked,
+    });
   };
   const validationSchema = Yup.object({
     name: Yup.string().required("Required"),
@@ -41,13 +46,13 @@ const ProfileForm = () => {
         <Form className="formik-form">
           <div className="form-control">
             {" "}
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Name*</label>
             <Field id="name" name="name" placeholder="Enter your name" />
             <ErrorMessage name="name" />
           </div>
           <div className="form-control">
             {" "}
-            <label htmlFor="photoURL">PhotoURL</label>
+            <label htmlFor="photoURL">PhotoURL*</label>
             <Field
               id="photoURL"
               name="photoURL"
@@ -58,14 +63,14 @@ const ProfileForm = () => {
 
           <div className="form-control">
             {" "}
-            <label htmlFor="bio">Biography</label>
+            <label htmlFor="bio">Biography*</label>
             <Field as="textarea" id="bio" name="bio" placeholder="Biography" />
             <ErrorMessage name="bio" />
           </div>
 
           <div className="form-control">
             {" "}
-            <label htmlFor="sessionDuration">Session - Duration</label>
+            <label htmlFor="sessionDuration">Session - Duration*</label>
             <Field
               type="number"
               id="sessionDuration"
@@ -74,31 +79,43 @@ const ProfileForm = () => {
             />
             <ErrorMessage name="sessionDuration" />
           </div>
-          <div className="form-control checkbox-control">
-            <label>
-              <Field type="checkbox" name="weekDaysChecked" value="monday" />
-              Monday
-            </label>
-            <label>
-              <Field type="checkbox" name="weekDaysChecked" value="tuesday" />
-              Tuesday
-            </label>
-            <label>
-              <Field type="checkbox" name="weekDaysChecked" value="wednesday" />
-              Wednesday
-            </label>
-            <label>
-              <Field type="checkbox" name="weekDaysChecked" value="thursday" />
-              Thursday
-            </label>
-            <label>
-              <Field type="checkbox" name="weekDaysChecked" value="friday" />
-              Friday
-            </label>
+          <div className="form-control">
+            <label htmlFor="workingDays">Select the working days*</label>
+
+            <div className="checkbox-control">
+              <label>
+                <Field type="checkbox" name="weekDaysChecked" value="monday" />
+                Monday
+              </label>
+              <label>
+                <Field type="checkbox" name="weekDaysChecked" value="tuesday" />
+                Tuesday
+              </label>
+              <label>
+                <Field
+                  type="checkbox"
+                  name="weekDaysChecked"
+                  value="wednesday"
+                />
+                Wednesday
+              </label>
+              <label>
+                <Field
+                  type="checkbox"
+                  name="weekDaysChecked"
+                  value="thursday"
+                />
+                Thursday
+              </label>
+              <label>
+                <Field type="checkbox" name="weekDaysChecked" value="friday" />
+                Friday
+              </label>
+            </div>
           </div>
           <div className="form-control">
             {" "}
-            <label htmlFor="fees">Fees</label>
+            <label htmlFor="fees">Fees*</label>
             <Field id="fees" name="fees" placeholder="Enter your fees" />
             <ErrorMessage name="fees" />
           </div>

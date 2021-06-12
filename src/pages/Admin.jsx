@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import CardPink from "../components/cards/CardPink";
+import CardYellow from "../components/cards/CardYellow";
 
 const Admin = () => {
-    return (
-        <>
-            
-        </>
-    )
-}
+  return (
+    <>
+      <CardYellow />
+      <CardPink />
+    </>
+  );
+};
 
-export default Admin
+export default Admin;

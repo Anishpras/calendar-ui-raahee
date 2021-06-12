@@ -1,27 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import db from "../../../firebase.utils";
+import { useAuth } from "../../../contexts/AuthContext";
 import "../_profile.scss";
 const Info = () => {
+  const [profileData, setProfileData] = useState({});
+  const { currentUser } = useAuth();
+  useEffect(() => {
+    db.collection("mhp")
+      .doc(currentUser.uid)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          console.log("hey");
+          setProfileData(doc.data());
+        } else {
+          console.log("hello");
+          setProfileData({
+            name: "",
+            photoURL: "",
+            bio: "",
+            sessionDuration: 0,
+            fees: "",
+            weekDaysChecked: [
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+            ],
+          });
+        }
+      });
+  }, []);
   return (
     <div className="profile-container">
       <div className="info-container">
         <div className="profileImage">
-          <img
-            src="https://images.unsplash.com/photo-1614289371518-722f2615943d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3334&q=80"
-            alt=""
-          />
+          <img src={profileData.photoURL} alt="" />
         </div>
 
-        <h2>Lorem Ipsum</h2>
+        <h2>{profileData.name}</h2>
         <div className="info">
           {" "}
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-            delectus eos, aut ullam laudantium amet reiciendis vitae placeat
-            quia voluptas.
-          </p>
-          <h3>Session timing - 55 Minutes</h3>
-          <h4>Days Available - Monday, Tuesday, Wednesday, Thursday, Friday</h4>
-          <h4>Fees - Rs.500</h4>
+          <p>{profileData.bio}</p>
+          <h3>{`Session Timing - ${profileData.sessionDuration} mins`}</h3>
+          <h4>Days Available - </h4>
+          {profileData.weekDaysChecked &&
+            profileData.weekDaysChecked.map((days) => <span>{days}</span>)}
+          <h4>
+            {profileData.fees ? ` Fees - ${profileData.fees}` : "Fees - 0"}
+          </h4>
         </div>
       </div>
     </div>

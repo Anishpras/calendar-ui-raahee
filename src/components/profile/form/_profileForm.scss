@@ -8,7 +8,7 @@
 .form-control {
   display: flex;
   margin-top: 20px;
-  justify-content: space-between;
+  flex-direction: column;
 }
 .formik-form {
   display: flex;
@@ -37,9 +37,11 @@
   cursor: pointer;
   transform: scale(1.1);
 }
-// .checkbox-control {
-//   flex-direction: column;
-// }
+.checkbox-control {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: row;
+}
 input,
 textarea {
   border: 2px solid #aaa;
