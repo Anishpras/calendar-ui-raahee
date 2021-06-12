@@ -14,17 +14,19 @@ const ProfileForm = () => {
     bio: "",
     sessionDuration: 0,
     fees: "",
-    weekDaysChecked: ["monday", "tuesday", "wednesday", "thursday", "friday"],
+    weekDaysChecked: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
   };
 
   const onSubmit = (values) => {
+    let daysChecked = values.weekDaysChecked;
+
     db.collection("mhp").doc(currentUser.uid).set({
       name: values.name,
       photoURL: values.photoURL,
       bio: values.bio,
       sessionDuration: values.sessionDuration,
       fees: values.fees,
-      weekDaysChecked: values.weekDaysChecked,
+      weekDaysChecked: daysChecked,
     });
   };
   const validationSchema = Yup.object({
@@ -85,18 +87,18 @@ const ProfileForm = () => {
 
             <div className="checkbox-control">
               <label>
-                <Field type="checkbox" name="weekDaysChecked" value="monday" />
+                <Field type="checkbox" name="weekDaysChecked" value="Monday" />
                 Monday
               </label>
               <label>
-                <Field type="checkbox" name="weekDaysChecked" value="tuesday" />
+                <Field type="checkbox" name="weekDaysChecked" value="Tuesday" />
                 Tuesday
               </label>
               <label>
                 <Field
                   type="checkbox"
                   name="weekDaysChecked"
-                  value="wednesday"
+                  value="Wednesday"
                 />
                 Wednesday
               </label>
@@ -104,12 +106,12 @@ const ProfileForm = () => {
                 <Field
                   type="checkbox"
                   name="weekDaysChecked"
-                  value="thursday"
+                  value="Thursday"
                 />
                 Thursday
               </label>
               <label>
-                <Field type="checkbox" name="weekDaysChecked" value="friday" />
+                <Field type="checkbox" name="weekDaysChecked" value="Friday" />
                 Friday
               </label>
             </div>
