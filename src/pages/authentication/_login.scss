@@ -14,12 +14,15 @@
   flex-direction: column;
   height: 90%;
   width: 90%;
+
+  font-family: "Poppins", sans-serif;
 }
 .login-header {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
   flex-direction: column;
+  margin-bottom: 5rem;
   p {
     color: #cd5244;
   }
@@ -30,12 +33,11 @@
   justify-content: space-around;
 
   button {
-    margin-top: 2rem;
     -webkit-border-radius: 28;
     -moz-border-radius: 28;
     border-radius: 28px;
     border: #cd5244 ridge;
-    font-family: Georgia;
+    margin-top: 5rem;
     color: #ffffff;
     font-size: 20px;
     background: #ff877f;

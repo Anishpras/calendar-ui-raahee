@@ -32,7 +32,7 @@ function Login() {
     <div className="login">
       <div className="login-container">
         <div className="login-header">
-          <h3>Log In</h3>
+          <h2>Log In</h2>
           {error && <p>{error}</p>}
         </div>
         <form className="login-form">
@@ -60,7 +60,7 @@ function Login() {
           </button>
         </form>
         <center>
-          <Link to="/register">
+          <Link to="/">
             <button className="button-register">Create New Account</button>
           </Link>
         </center>

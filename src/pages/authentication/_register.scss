@@ -30,12 +30,11 @@
   justify-content: space-around;
 
   button {
-    margin-top: 2rem;
     -webkit-border-radius: 28;
     -moz-border-radius: 28;
     border-radius: 28px;
     border: #cd5244 ridge;
-    font-family: Georgia;
+
     color: #ffffff;
     font-size: 20px;
     background: #ff877f;
@@ -58,7 +57,7 @@
 .registerForm-control {
   display: flex;
   flex-direction: column;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   width: 70%;
   align-self: center;
   input {
