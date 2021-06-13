@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import db from "../../firebase.utils";
 import "./_event-card.scss";
-const EventCard = ({ time, appointments }) => {
-  console.log(time, appointments);
+const EventCard = ({ id, date, time }) => {
+  const [clientName, setClientName] = useState('');
+  useEffect(() => {
+    db.collection('users').doc(id).get().then((doc) => {
+      setClientName(doc.data().userName);
+    })
+  }, [])
   return (
     <div className="event-card">
       {" "}
       <div className="eventCard-content">
         {" "}
-        <h2>{`${time}`} </h2>
-        {appointments.map((appointment) => {
-          return <h3>{appointment.time}</h3>;
-        })}
+        <h2>{clientName}: {date}: {time}</h2>
       </div>
     </div>
   );
