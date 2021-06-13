@@ -15,19 +15,15 @@ const Events = () => {
       .get()
       .then((mhp_appoints) => {
         mhp_appoints.forEach((event) => {
-          // console.log(event.data());
-
           setEvents([
             {
-              time: event.id,
+              date: event.id,
               appointments: event.data().appointments,
             },
           ]);
         });
       });
-  }, []);
-
-  console.log(events);
+  }, [currentUser.uid]);
 
   return (
     <div className="event">
@@ -36,20 +32,11 @@ const Events = () => {
           <h1>Your Appointments</h1>
         </div>
 
-        {/* {events.map((event) => {
-          event.appointments.appointments.map((single_event) => {
-            console.log(single_event, event.id);
-            alert("hello");
-          });
-        })} */}
-        {events.map(({ time, appointments }) => {
-          return <EventCard time={time} appointments={appointments} />;
+        {events.map(({ date, appointments }, index) => {
+          return (
+            <EventCard key={index} date={date} appointments={appointments} />
+          );
         })}
-        {/* {events.map((event) => {
-          event.appointments.appointments.map((single_event) => {
-            return <EventCard />;
-          });
-        })}  */}
       </div>
     </div>
   );
