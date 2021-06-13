@@ -20,7 +20,7 @@ const ProfileForm = () => {
   const onSubmit = (values) => {
     let daysChecked = values.weekDaysChecked;
 
-    db.collection("mhp").doc(currentUser.uid).set({
+    db.collection("mhp").doc(currentUser.uid).update({
       name: values.name,
       photoURL: values.photoURL,
       bio: values.bio,

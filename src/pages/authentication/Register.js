@@ -6,7 +6,7 @@ import db from "../../firebase.utils";
 
 function Register() {
   const history = useHistory("");
-  const [firstName, setFirstName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -27,12 +27,12 @@ function Register() {
       const auth = await signup(email, password);
       if (auth.user) {
         auth.user.updateProfile({
-          displayName: firstName,
+          displayName: name,
         });
         db.collection("mhp")
           .doc(auth.user.uid)
           .set({
-            name: firstName,
+            name: name,
             email: email,
           })
           .then((s) => {
@@ -59,7 +59,7 @@ function Register() {
             {" "}
             <label htmlFor="name">Name</label>
             <input
-              onChange={(e) => setFirstName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
               type="name"
               placeholder="Name"
               required

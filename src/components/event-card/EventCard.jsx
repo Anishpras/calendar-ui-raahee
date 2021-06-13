@@ -1,6 +1,6 @@
 import React from "react";
 import "./_event-card.scss";
-const EventCard = () => {
+const EventCard = ({ id, event }) => {
   return (
     <div className="event-card">
       {" "}
