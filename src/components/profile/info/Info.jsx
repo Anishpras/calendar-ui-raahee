@@ -31,7 +31,7 @@ const Info = () => {
           });
         }
       });
-  }, []);
+  }, [currentUser.uid]);
   return (
     <div className="profile-container">
       <div className="info-container">

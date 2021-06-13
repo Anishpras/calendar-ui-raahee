@@ -24,9 +24,7 @@ const Events = () => {
           ]);
         });
       });
-  }, []);
-
-  console.log(events);
+  }, [currentUser.uid]);
 
   return (
     <div className="event">
