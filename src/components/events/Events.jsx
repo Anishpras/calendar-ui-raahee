@@ -7,7 +7,7 @@ import { useAuth } from "../../contexts/AuthContext";
 const Events = () => {
   const { currentUser } = useAuth();
   const [events, setEvents] = useState([]);
-  const [time, setTime] = useState([]);
+
   useEffect(() => {
     db.collection("mhp")
       .doc(currentUser.uid)
@@ -16,12 +16,17 @@ const Events = () => {
       .then((mhp_appoints) => {
         mhp_appoints.forEach((event) => {
           // console.log(event.data());
-          setTime(event.id);
-          setEvents(event.data().appointments);
+
+          setEvents([
+            {
+              time: event.id,
+              appointments: event.data().appointments,
+            },
+          ]);
         });
       });
   }, []);
-  console.log(time);
+
   console.log(events);
 
   return (
@@ -37,12 +42,14 @@ const Events = () => {
             alert("hello");
           });
         })} */}
-
-        {events.map((event) => {
+        {events.map(({ time, appointments }) => {
+          return <EventCard time={time} appointments={appointments} />;
+        })}
+        {/* {events.map((event) => {
           event.appointments.appointments.map((single_event) => {
             return <EventCard />;
           });
-        })} 
+        })}  */}
       </div>
     </div>
   );
