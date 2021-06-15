@@ -10,7 +10,7 @@ $background-color: #f4dedc;
 .main__app {
   background: $background-color;
   width: auto;
-  height: 150vh;
+  height: 130vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -73,7 +73,7 @@ $background-color: #f4dedc;
   width: 10rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .main__app {
     height: 200vh;
   }

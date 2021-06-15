@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import ProfileForm from "./form/ProfileForm";
 import Info from "./info/Info";
-
+import { useAuth } from "../../contexts/AuthContext";
 import "./_profile.scss";
 const Profile = () => {
-  const [clicked, setClicked] = useState(false);
+  const { currentUser } = useAuth();
+  const [clicked, setClicked] = useState(currentUser);
 
   return (
     <div className="profile">

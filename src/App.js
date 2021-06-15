@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext.js";
 import "./_app.scss";
+
 import logo from "./assets/logoRaahee.png";
 import blob5 from "./assets/Ellipse 5.png";
 import blob4 from "./assets/Ellipse 4.png";
@@ -14,7 +15,7 @@ import Login from "./pages/authentication/Login.js";
 const App = () => {
   return (
     <div className="main__app">
-    <img className="logoImage" src={logo} alt="" />
+      <img className="logoImage" src={logo} alt="" />
       <div className="app">
         <img className="blob5" src={blob5} alt="" />
         <img className="blob4" src={blob4} alt="" />

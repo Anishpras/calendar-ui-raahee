@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./_profileForm.scss";
 import db from "../../../firebase.utils";
 import { useAuth } from "../../../contexts/AuthContext";
-
+// import { TextField } from "@material-ui/core";
 const ProfileForm = () => {
   const { currentUser } = useAuth();
 
@@ -14,18 +14,24 @@ const ProfileForm = () => {
     bio: "",
     sessionDuration: 0,
     fees: "",
+    timeStart: "",
+    timeEnd: "",
     weekDaysChecked: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
   };
 
   const onSubmit = (values) => {
+    console.log(values);
     let daysChecked = values.weekDaysChecked;
-
+    let startTime = parseInt(values.timeStart);
+    let endTime = parseInt(values.timeEnd);
     db.collection("mhp").doc(currentUser.uid).update({
       name: values.name,
       photoURL: values.photoURL,
       bio: values.bio,
       sessionDuration: values.sessionDuration,
       fees: values.fees,
+      startTime: startTime,
+      endTime: endTime,
       weekDaysChecked: daysChecked,
     });
   };
@@ -122,11 +128,41 @@ const ProfileForm = () => {
             <Field id="fees" name="fees" placeholder="Enter your fees" />
             <ErrorMessage name="fees" />
           </div>
+          <div className="form-control">
+            <Field name="timeStart" as="select">
+              <option value="10">10:00</option>
+              <option value="11">11:00</option>
+              <option value="12">12:00</option>
+            </Field>
+          </div>
+          <div className="form-control">
+            <Field name="timeEnd" as="select">
+              <option value="10">10:00</option>
+              <option value="11">11:00</option>
+              <option value="12">12:00</option>
+            </Field>
+          </div>
+
           <button className="btn-submit" type="submit">
             Submit
           </button>
         </Form>
       </Formik>
+      {/* <TextField
+        id="time"
+        label="Alarm clock"
+        type="time"
+        defaultValue="07:00"
+        onChange={(e) => {
+          console.log(e.target.value);
+        }}
+        InputLabelProps={{
+          shrink: true,
+        }}
+        inputProps={{
+          step: 3600, // 5 min
+        }}
+      /> */}
     </div>
   );
 };
