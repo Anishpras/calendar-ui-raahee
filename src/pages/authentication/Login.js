@@ -60,7 +60,7 @@ function Login() {
           </button>
         </form>
         <center>
-          <Link to="/">
+          <Link to="/register">
             <button className="button-register">Create New Account</button>
           </Link>
         </center>

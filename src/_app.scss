@@ -10,9 +10,11 @@ $background-color: #f4dedc;
 .main__app {
   background: $background-color;
   width: auto;
-
+  height: 150vh;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .app {
@@ -41,8 +43,7 @@ $background-color: #f4dedc;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  width: 85vw;
-  height: 80vh;
+  width: 79vw;
 }
 .blob5 {
   position: absolute;
@@ -52,7 +53,7 @@ $background-color: #f4dedc;
 .blob4 {
   position: absolute;
   left: 2rem;
-  top: 48rem;
+  top: 39rem;
   width: 15rem;
 }
 .blob6 {
@@ -68,6 +69,27 @@ $background-color: #f4dedc;
 .blob7 {
   position: absolute;
   right: 5rem;
-  top: 53rem;
+  top: 42rem;
   width: 10rem;
+}
+
+@media (max-width: 768px) {
+  .main__app {
+    height: 200vh;
+  }
+  .blob5 {
+    display: none;
+  }
+  .blob4 {
+    display: none;
+  }
+  .blob6 {
+    display: none;
+  }
+  .blob8 {
+    display: none;
+  }
+  .blob7 {
+    display: none;
+  }
 }
