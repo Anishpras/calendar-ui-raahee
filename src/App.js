@@ -14,8 +14,8 @@ import Login from "./pages/authentication/Login.js";
 const App = () => {
   return (
     <div className="main__app">
+    <img className="logoImage" src={logo} alt="" />
       <div className="app">
-        <img className="logoImage" src={logo} alt="" />
         <img className="blob5" src={blob5} alt="" />
         <img className="blob4" src={blob4} alt="" />
         <img className="blob6" src={blob6} alt="" />
@@ -23,8 +23,8 @@ const App = () => {
         <div className="app_container">
           <BrowserRouter>
             <AuthProvider>
-              <Route path="/" exact component={Register} />
-              <Route path="/login" exact component={Login} />
+              <Route path="/" exact component={Login} />
+              <Route path="/register" exact component={Register} />
               <Route path="/admin" exact component={Admin} />
             </AuthProvider>
           </BrowserRouter>
