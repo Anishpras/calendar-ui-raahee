@@ -15,18 +15,21 @@ const Info = () => {
           setProfileData(doc.data());
         } else {
           console.log("hello");
+
           setProfileData({
             name: "",
             photoURL: "",
             bio: "",
             sessionDuration: 0,
             fees: "",
+            timeStart: 9,
+            timeEnd: 17,
             weekDaysChecked: [
-              "monday",
-              "tuesday",
-              "wednesday",
-              "thursday",
-              "friday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
             ],
           });
         }
@@ -42,13 +45,17 @@ const Info = () => {
         <h2>{profileData.name}</h2>
         <div className="info">
           {" "}
-          <p>{profileData.bio}</p>
-          <h3>{`Session Timing - ${profileData.sessionDuration} mins`}</h3>
+          <div className="info_bio">
+            <p>{profileData.bio}</p>
+          </div>
+          <h4>{`Session Timing - ${profileData.sessionDuration} mins`}</h4>
           <h4>Days Available - </h4>
           {profileData.weekDaysChecked &&
             profileData.weekDaysChecked.map((days) => <span>{days}</span>)}
+          <h4>{`Start time -  ${profileData.startTime}:00 hrs`}</h4>
+          <h4>{`End time -  ${profileData.endTime}:00 hrs`}</h4>
           <h4>
-            {profileData.fees ? ` Fees - ${profileData.fees}` : "Fees - 0"}
+            {profileData.fees ? ` Fees - ₹ ${profileData.fees}` : "Fees - ₹ 0"}
           </h4>
         </div>
       </div>

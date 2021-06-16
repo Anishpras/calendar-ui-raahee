@@ -5,22 +5,21 @@ import "./_profileForm.scss";
 import db from "../../../firebase.utils";
 import { useAuth } from "../../../contexts/AuthContext";
 
-const ProfileForm = () => {
+const ProfileForm = ({ clicked, setClicked }) => {
   const { currentUser } = useAuth();
-
+  
   const initialValues = {
     name: "",
     photoURL: "",
     bio: "",
     sessionDuration: 0,
     fees: "",
-    timeStart: "",
-    timeEnd: "",
+    timeStart: 9,
+    timeEnd: 17,
     weekDaysChecked: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
   };
 
   const onSubmit = (values) => {
-    console.log(values);
     let daysChecked = values.weekDaysChecked;
     let startTime = parseInt(values.timeStart);
     let endTime = parseInt(values.timeEnd);
@@ -34,6 +33,7 @@ const ProfileForm = () => {
       endTime: endTime,
       weekDaysChecked: daysChecked,
     });
+    setClicked(!clicked);
   };
   const validationSchema = Yup.object({
     name: Yup.string().required("Required"),
@@ -131,29 +131,29 @@ const ProfileForm = () => {
           <div className="form-control">
             <label htmlFor="startTime">Start Time*</label>
             <Field name="timeStart" as="select">
-              <option value="10">09:00</option>
-              <option value="11">10:00</option>
-              <option value="12">11:00</option>
+              <option value="09">09:00</option>
+              <option value="10">10:00</option>
+              <option value="11">11:00</option>
               <option value="12">12:00</option>
-              <option value="12">13:00</option>
-              <option value="12">14:00</option>
-              <option value="12">15:00</option>
-              <option value="12">16:00</option>
-              <option value="12">17:00</option>
+              <option value="13">13:00</option>
+              <option value="14">14:00</option>
+              <option value="15">15:00</option>
+              <option value="16">16:00</option>
+              <option value="17">17:00</option>
             </Field>
           </div>
           <div className="form-control">
             <label htmlFor="endTime">End Time*</label>
             <Field name="timeEnd" as="select">
-              <option value="10">09:00</option>
-              <option value="11">10:00</option>
-              <option value="12">11:00</option>
+              <option value="09">09:00</option>
+              <option value="10">10:00</option>
+              <option value="11">11:00</option>
               <option value="12">12:00</option>
-              <option value="12">13:00</option>
-              <option value="12">14:00</option>
-              <option value="12">15:00</option>
-              <option value="12">16:00</option>
-              <option value="12">17:00</option>
+              <option value="13">13:00</option>
+              <option value="14">14:00</option>
+              <option value="15">15:00</option>
+              <option value="16">16:00</option>
+              <option value="17">17:00</option>
             </Field>
           </div>
 
