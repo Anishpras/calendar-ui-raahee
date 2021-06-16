@@ -9,21 +9,21 @@ $background-color: #f4dedc;
 
 .main__app {
   background: $background-color;
-  width: auto;
+  width: 100vw;
   height: 130vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+
 }
 
 .app {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  .logoImage {
+    padding: 20px;
+}
 }
 
 .app_container {
@@ -44,6 +44,7 @@ $background-color: #f4dedc;
   align-items: center;
   justify-content: space-around;
   width: 79vw;
+
 }
 .blob5 {
   position: absolute;
@@ -75,7 +76,7 @@ $background-color: #f4dedc;
 
 @media (max-width: 1024px) {
   .main__app {
-    height: 200vh;
+    height: 160vh;
   }
   .blob5 {
     display: none;
@@ -92,4 +93,13 @@ $background-color: #f4dedc;
   .blob7 {
     display: none;
   }
+}
+
+@media (max-width:768px) {
+  .main__app {
+    height: 200vh;
+  }
+.app_container {
+  width: 100%;
+}
 }
