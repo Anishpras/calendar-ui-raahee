@@ -9,6 +9,9 @@
   display: flex;
   margin-top: 20px;
   flex-direction: column;
+  p {
+    color: red;
+  }
 }
 .formik-form {
   display: flex;
@@ -57,4 +60,3 @@ textarea:focus {
   border-color: #ff877f;
   box-shadow: 0 0 8px 0 #ff877f;
 }
-

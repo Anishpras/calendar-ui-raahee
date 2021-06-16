@@ -7,7 +7,7 @@ import { useAuth } from "../../../contexts/AuthContext";
 
 const ProfileForm = ({ clicked, setClicked }) => {
   const { currentUser } = useAuth();
-  
+
   const initialValues = {
     name: "",
     photoURL: "",
@@ -57,7 +57,7 @@ const ProfileForm = ({ clicked, setClicked }) => {
             {" "}
             <label htmlFor="name">Name*</label>
             <Field id="name" name="name" placeholder="Enter your name" />
-            <ErrorMessage name="name" />
+            <ErrorMessage component="p" name="name" />
           </div>
           <div className="form-control">
             {" "}
@@ -67,14 +67,14 @@ const ProfileForm = ({ clicked, setClicked }) => {
               name="photoURL"
               placeholder="Enter a URL for profile photo"
             />
-            <ErrorMessage name="photoURL" />
+            <ErrorMessage component="p" name="photoURL" />
           </div>
 
           <div className="form-control">
             {" "}
             <label htmlFor="bio">Biography*</label>
             <Field as="textarea" id="bio" name="bio" placeholder="Biography" />
-            <ErrorMessage name="bio" />
+            <ErrorMessage component="p" name="bio" />
           </div>
 
           <div className="form-control">
@@ -86,7 +86,7 @@ const ProfileForm = ({ clicked, setClicked }) => {
               name="sessionDuration"
               placeholder="Enter your session duration"
             />
-            <ErrorMessage name="sessionDuration" />
+            <ErrorMessage component="p" name="sessionDuration" />
           </div>
           <div className="form-control">
             <label htmlFor="workingDays">Select the working days*</label>
@@ -126,7 +126,7 @@ const ProfileForm = ({ clicked, setClicked }) => {
             {" "}
             <label htmlFor="fees">Fees*</label>
             <Field id="fees" name="fees" placeholder="Enter your fees" />
-            <ErrorMessage name="fees" />
+            <ErrorMessage component="p" name="fees" />
           </div>
           <div className="form-control">
             <label htmlFor="startTime">Start Time*</label>
