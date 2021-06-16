@@ -12,8 +12,9 @@
   border-radius: 32px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 90%;
+  height: 75vh;
+  width: 95%;
+  margin: 15px;
 }
 .register-header {
   display: flex;
@@ -41,7 +42,7 @@
     padding: 10px 20px 10px 20px;
     text-decoration: none;
     width: 50%;
-
+    margin-top: 50px;
     align-self: center;
   }
   button:hover {
@@ -57,7 +58,7 @@
 .registerForm-control {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
   width: 70%;
   align-self: center;
   input {
