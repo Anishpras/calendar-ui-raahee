@@ -59,11 +59,6 @@ function Login() {
             Log In
           </button>
         </form>
-        <center>
-          <Link to="/register">
-            <button className="button-register">Create New Account</button>
-          </Link>
-        </center>
       </div>
     </div>
   );

@@ -10,13 +10,16 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [secretCode, setSecretCode] = useState("");
   const [error, setError] = useState("");
   const { signup } = useAuth();
   const [loading, setLoading] = useState(false);
-
+  const code = "RaheeAdmin";
   async function register(event) {
     event.preventDefault();
-
+    if (secretCode !== code) {
+      return setError("Secret code not valid");
+    }
     if (password !== confirmPassword) {
       return setError("Passwords do not match");
     }
@@ -89,6 +92,14 @@ function Register() {
               onChange={(e) => setConfirmPassword(e.target.value)}
               type="password"
               placeholder="Confirm Password"
+            />
+          </div>
+          <div className="registerForm-control">
+            <label htmlFor="name">Enter secret code</label>
+            <input
+              onChange={(e) => setSecretCode(e.target.value)}
+              type="password"
+              placeholder="Secret Code"
             />
           </div>
 
