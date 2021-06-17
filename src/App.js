@@ -24,7 +24,7 @@ const App = () => {
           <BrowserRouter>
             <AuthProvider>
               <Route path="/" exact component={Login} />
-              <Route path="/register" exact component={Register} />
+              {/* <Route path="/register" exact component={Register} /> */}
               <Route path="/admin" exact component={Admin} />
             </AuthProvider>
           </BrowserRouter>
