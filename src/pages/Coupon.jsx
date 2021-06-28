@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CouponCard from "../components/Coupon/CouponCard";
+import db from "../firebase.utils";
+import { useAuth } from "../contexts/AuthContext";
+import { FieldValue } from "../firebase.utils";
+
 const Coupon = () => {
+  const { currentUser } = useAuth();
   const [couponsUnused, setCouponsUnused] = useState([]);
   const [couponValue, setCouponValue] = useState();
   console.log(couponValue);
@@ -8,7 +13,30 @@ const Coupon = () => {
     const coupon = Math.random().toString(36).substring(2).toUpperCase();
     setCouponsUnused([...couponsUnused, { value: couponValue, code: coupon }]);
     setCouponValue("");
+    db.collection("mhp")
+      .doc(currentUser.uid)
+      .set(
+        {
+          coupons: FieldValue.arrayUnion(...[...couponsUnused, { value: couponValue, code: coupon }]),
+        },
+        { merge: true },
+      );
   };
+
+  useEffect(() => {
+    db.collection("mhp")
+      .doc(currentUser.uid)
+      .get()
+      .then((doc) => {
+        if (doc.data().coupons) {
+          setCouponsUnused(doc.data().coupons);
+        } else {
+          setCouponsUnused([]);
+        }
+      })
+  // eslint-disable-next-line
+  }, []);
+
   const handleClick = () => {
     if (couponValue === undefined) {
       console.log("Enter a coupon value");
