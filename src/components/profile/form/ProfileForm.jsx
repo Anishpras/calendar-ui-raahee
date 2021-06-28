@@ -32,6 +32,8 @@ const ProfileForm = ({ clicked, setClicked }) => {
       startTime: startTime,
       endTime: endTime,
       weekDaysChecked: daysChecked,
+      profileUpdatedTimestamp: new Date(),
+      verificationStage: 'verified',
     });
     setClicked(!clicked);
   };
@@ -140,6 +142,12 @@ const ProfileForm = ({ clicked, setClicked }) => {
               <option value="15">15:00</option>
               <option value="16">16:00</option>
               <option value="17">17:00</option>
+              <option value="18">18:00</option>
+              <option value="19">19:00</option>
+              <option value="20">20:00</option>
+              <option value="21">21:00</option>
+              <option value="22">22:00</option>
+              <option value="23">23:00</option>
             </Field>
           </div>
           <div className="form-control">
@@ -154,6 +162,12 @@ const ProfileForm = ({ clicked, setClicked }) => {
               <option value="15">15:00</option>
               <option value="16">16:00</option>
               <option value="17">17:00</option>
+              <option value="18">18:00</option>
+              <option value="19">19:00</option>
+              <option value="20">20:00</option>
+              <option value="21">21:00</option>
+              <option value="22">22:00</option>
+              <option value="23">23:00</option>
             </Field>
           </div>
 

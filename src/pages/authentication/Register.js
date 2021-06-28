@@ -27,21 +27,43 @@ function Register() {
     try {
       setError("");
       setLoading(true);
-      const auth = await signup(email, password);
-      if (auth.user) {
-        auth.user.updateProfile({
-          displayName: name,
-        });
-        db.collection("mhp")
-          .doc(auth.user.uid)
-          .set({
-            name: name,
-            email: email,
-          })
-          .then((s) => {
-            history.push("/admin");
+      signup(email, password).then((auth) => {
+        if (auth.user) {
+          auth.user.updateProfile({
+            displayName: name,
           });
-      }
+          db.collection("mhp")
+            .doc(auth.user.uid)
+            .set({
+              displayName: name,
+              fullName: name,
+              email: email,
+              RCIlicense: '',
+              accountHolderName: name,
+              bankAccount: '',
+              credits: 0,
+              degrees: '',
+              documentsUrl: [],
+              experience: '',
+              gender: 'Other',
+              gstNumber: '',
+              ifscCode: '',
+              kindOfProfessional: 'Psychologist',
+              languages: ['English', 'Hindi'],
+              location: '',
+              panNumber: '',
+              phoneNumber: '',
+              profileCreatedTimestamp: new Date(),
+              speciality: [],
+              upiId: '',
+              verificationStage: 'registered',
+              workEx: [],
+            })
+            .then((s) => {
+              history.push("/admin");
+            });
+        }
+      });
     } catch {
       setError("Failed to create an account");
     }
