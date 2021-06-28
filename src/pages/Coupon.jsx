@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import CouponCard from "../components/Coupon/CouponCard";
 import db from "../firebase.utils";
 import { useAuth } from "../contexts/AuthContext";
@@ -70,6 +71,7 @@ const Coupon = () => {
           </tbody>
         </table>
       </div>
+      <Link to="/admin">Go Back To Profile</Link>
     </div>
   );
 };
