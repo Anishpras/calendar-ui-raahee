@@ -1,5 +1,4 @@
 .profile {
-  // padding: 10px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -30,6 +29,9 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  height: 15rem;
+  overflow: auto;
+  margin-bottom: 20px;
 }
 .profile-button {
   -webkit-border-radius: 28;
