@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import CouponCard from "../components/Coupon/CouponCard";
 const Coupon = () => {
   const [couponsUnused, setCouponsUnused] = useState([]);
@@ -42,6 +43,7 @@ const Coupon = () => {
           </tbody>
         </table>
       </div>
+      <Link to="/admin">Go Back To Profile</Link>
     </div>
   );
 };
