@@ -10,7 +10,7 @@ const ProfileForm = ({ clicked, setClicked }) => {
 
   const initialValues = {
     name: "",
-    photoURL: "",
+    photoUrl: "",
     bio: "",
     sessionDuration: 0,
     fees: "",
