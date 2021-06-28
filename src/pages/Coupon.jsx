@@ -50,12 +50,13 @@ const Coupon = () => {
   return (
     <div>
       <input
+      className="generate_input"
         type="number"
         value={couponValue}
         onChange={(e) => setCouponValue(e.target.value)}
         required
       />
-      <button onClick={handleClick}>Generate Coupon</button>
+      <button className="generate_coupon" onClick={handleClick}>Generate Coupon</button>
       <div className="couponsList">
         <table>
           <thead>

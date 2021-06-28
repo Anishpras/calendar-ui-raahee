@@ -73,6 +73,28 @@ $background-color: #f4dedc;
   top: 42rem;
   width: 10rem;
 }
+td {
+  padding: 10px;
+}
+.generate_coupon {
+  height: 35px;
+  margin: 0px 10px;
+  width: 159px;
+  border: none;
+  background-color: #f7a75e;
+  color: white;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+.generate_input {
+  height: 35px;
+  margin: 0px 10px;
+  width: 159px;
+  border: none;
+
+  border-radius: 10px;
+  font-size: 1rem;
+}
 
 @media (max-width: 1024px) {
   .main__app {
