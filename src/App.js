@@ -11,6 +11,7 @@ import blob8 from "./assets/Ellipse 8.png";
 import Admin from "./pages/Admin";
 import Register from "./pages/authentication/Register.js";
 import Login from "./pages/authentication/Login.js";
+import Coupon from "./pages/Coupon.jsx";
 const App = () => {
   return (
     <div className="main__app">
@@ -26,6 +27,7 @@ const App = () => {
               <Route path="/" exact component={Login} />
               <Route path="/register" exact component={Register} />
               <Route path="/admin" exact component={Admin} />
+              <Route path="/coupon" exact component={Coupon} />
             </AuthProvider>
           </BrowserRouter>
         </div>

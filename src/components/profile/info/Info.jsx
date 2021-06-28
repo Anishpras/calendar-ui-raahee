@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import db from "../../../firebase.utils";
 import { useAuth } from "../../../contexts/AuthContext";
 import "../_profile.scss";
+import { Link } from "react-router-dom";
 const Info = () => {
   const [profileData, setProfileData] = useState({});
   const { currentUser } = useAuth();
@@ -59,6 +60,9 @@ const Info = () => {
           </h4>
         </div>
       </div>
+      <Link className="coupon-button" to="/coupon">
+        <center> Generate Coupon</center>
+      </Link>
     </div>
   );
 };

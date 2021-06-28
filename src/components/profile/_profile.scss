@@ -60,6 +60,20 @@
   align-items: center;
   width: 23rem;
 }
+.coupon-button {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  border: #cd5244 ridge;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 20px;
+  background: #ff877f;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 50%;
+  margin-bottom: 10px;
+}
 @media (max-width: 768px) {
   .info-container {
     padding: 25px;
