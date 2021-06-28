@@ -1,14 +1,14 @@
 import firebase from "firebase";
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyDbZtFhcgwc1PFvwIX569C_Ei6-LEsJ2zs',
-    authDomain: 'raahee-testing.firebaseapp.com',
-    databaseURL: 'https://raahee-testing.firebaseio.com',
-    projectId: 'raahee-testing',
-    storageBucket: 'raahee-testing.appspot.com',
-    messagingSenderId: '410583406163',
-    appId: '1:410583406163:web:eb5759cd29c1da605658a6',
-    measurementId: 'G-LR7RF5S9BZ',
+    apiKey: 'AIzaSyCYCCbz5J6KGlPHQcfZ6V55AUeaq-l3Jn8',
+    authDomain: 'raahee-5a80f.firebaseapp.com',
+    databaseURL: 'https://raahee-5a80f.firebaseio.com',
+    projectId: 'raahee-5a80f',
+    storageBucket: 'raahee-5a80f.appspot.com',
+    messagingSenderId: '385300765927',
+    appId: '1:385300765927:web:7163f7a7f5059251521642',
+    measurementId: 'G-P4BTGSXBEK',
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
